@@ -4,6 +4,7 @@ Temporary repo for learning and blueprint skeleton for ultimate restructuring of
 # What is podbooking
 A solution for a local, self-hosted booking system that was replacing an older php system that ran into issues with LDAP authentication libraries.
 It's basically a flask app with an SQLite database and it's served by gunicorn inside a docker container that's hosted behind a generic nginx reverse proxy.
+(push test)
 
 # Plan
 - Force myself to build a really simple blueprint structure for a small test project initially
