@@ -16,3 +16,9 @@ It's basically a flask app with an SQLite database and it's served by gunicorn i
 - Multiple ways of authenticating users, LDAP, ????, etc..
 - Cleanup of the routes logic, right now there are a lot of weird hacks all over (string manipulation anyone?)
 - Separate html out from python code string variables, see above ^
+
+# Minimum outcome
+I'll have played around with basic blueprinting and testing, and hopefully also hooked it up to some neat github actions :)
+
+# ETA
+Soon™
