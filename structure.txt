@@ -2,16 +2,34 @@
 ├── podbooking_refactor
     ├── app
     │   ├── __init__.py  <- initializes, configures and creates app, registers app/blueprints
+        ├── extensions.py  <- initializes flask_sqlalchemy and creates sql_alchemy object "db"
     │   ├── main
     │   │   ├── __init__.py <- imports Blueprint, creates Blueprint object from . and imports routes
     │   │   └── routes.py <- imports blueprint object from app.main (__init__ file bp object)
+    │   ├── models
+    │   │   ├── post.py <- imports Blueprint, creates Blueprint object from . and imports routes
     │   ├── posts
     │   │   ├── __init__.py <- imports Blueprint, creates Blueprint object from . and imports routes
     │   │   └── routes.py <- imports blueprint object from app.posts (__init__ file bp object)
+    │   ├── questions
+    │   │   ├── __init__.py <- imports Blueprint, creates Blueprint object from . and imports routes
+    │   │   └── routes.py <- imports blueprint object from app.questions (__init__ file bp object)
     │   └── templates
-    │       ├── base.html <- base html for all templates, url_for can reference folder.html_page
+    │       ├── base.html <- base html for all templates, top navbar for routes
     │       ├── index.html <- extends base.html, adds own % block % 
-    │       └── posts
-    │           ├── categories.html <- extends base.html, adds own % block % 
+    │       ├── posts
+    │       │   ├── categories.html <- extends base.html, adds own % block % 
+    │       │   └── index.html <- extends base.html, adds own % block % (can refer to file in folder above)
+    │       └── questions
     │           └── index.html <- extends base.html, adds own % block % (can refer to file in folder above)
+    ├── app.db <- sqlite databsae file that holds all tables defined in models/
     └── config.py <- builds config class object with .env data from os.environ.get(VAR)
+
+
+$ flask shell
+>>> from app.extensions import db
+>>> from app.models.post import post
+>>> db.create_all()
+
+# .create_all() cannot update an existing model, for that you need to .drop_all() first
+# .drop_all() DELETES all tables in the database! (ref. bobby tables)

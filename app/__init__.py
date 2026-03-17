@@ -3,12 +3,16 @@ from flask import Flask
 # grab the config class from the config.py file
 from config import Config
 
+# grab the database object from the extensions.py file
+from app.extensions import db
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
     # initialize flask extensions here
-
+    # connects the database object to the app application instance
+    db.init_app(app)
 
     # register blueprints here
     from app.main import bp as main_bp
