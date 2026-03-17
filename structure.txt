@@ -31,5 +31,25 @@ $ flask shell
 >>> from app.models.post import post
 >>> db.create_all()
 
-# .create_all() cannot update an existing model, for that you need to .drop_all() first
-# .drop_all() DELETES all tables in the database! (ref. bobby tables)
+.create_all() cannot update an existing model, for that you need to .drop_all() first
+.drop_all() DELETES all tables in the database! (ref. bobby tables)
+
+For all model class definitions, dont forget __repr__
+Also use the sql_alchemy modern way (2026) of assigning column classifications
+
+Digitalocean version done, biggest notes here:
+- app/__init__.py - main init file
+    + defines the configuration for the app
+    + imports the database object from app.extensions
+    + important: imports and registers every blueprint from app.<blueprint_name>
+    + (possible to set url_prefix for blueprints)
+- app/extensions.py take care of database initialization
+- app/models/ files import database object and define class object(s)
+- app/folder/ 
+    - __init__ defines Blueprint object for folder-intent 
+    - routes.py defines route logic for handling of http requests and redirects/renders
+- app/templates/
+    - base.html is the generic base html file for all pages (this may be too broad later on?)
+    - index.html extends the base file and represents the '/' route
+    folder/
+        - index.html also extends base file, but 'index' specific content for a certain sub-route
