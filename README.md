@@ -12,7 +12,7 @@ It's basically a flask app with an SQLite database and it's served by gunicorn i
 - Get basic testing into the initial code, just to get things running and getting into the habit of writing tests directly
 - [How to Use SQLAlchemy in 2026 - Pretty Printed](https://www.youtube.com/watch?v=Y-TxICRUy_k)
 - [How to Use Flask-SQLALchemy With Flask Blueprints - Pretty Printed (2022)](https://www.youtube.com/watch?v=WhwU1-DLeVw)
-- [How To Structure a Large Flask Application with Flask Blueprints and Flask-SQLAlchemy - DigitalOcean (2022)](https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy#the-target-application-structure)
+- [X] [How To Structure a Large Flask Application with Flask Blueprints and Flask-SQLAlchemy - DigitalOcean (2022)](https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy#the-target-application-structure)
 ======= ^ ABOVE IS MANDATORY TO BE DONE BEFORE MOVING ON
 - Identify the categories of code that's used, and how it can be classified according to the blueprint structure 
 - Build it more modular (like, right now a lot of stuff is hardcoded and/or specific only for our specific usecase at University West) so it can be used by others for similar purposes (booking a resource in a location with user authentication and booking rules)
