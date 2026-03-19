@@ -1,3 +1,6 @@
 PrettyPrinted example: {
-    
+
+Example from PrettyPrinted has several outdated methods, so had to glue
+together some from the DO style just to get further. Initially feels 
+similar, but this will run multiple model files
 }
