@@ -1,6 +1,7 @@
 from flask import Blueprint
 from .extensions import db
-from .models import User
+from .models.user import User
+from .models.video import Video
 
 main = Blueprint('main', __name__)
 
