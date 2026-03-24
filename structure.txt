@@ -1,6 +1,26 @@
 PrettyPrinted example: {
 
+.
+└── podbooking_refactor
+    └── myproject
+        ├── __init__.py  <- imports configuration, initializes and creates app, registers app/blueprints
+        ├── config.py  <- contains configuration info for the project
+        ├── db.sqlite3  <- sqlite3 database file
+        ├── extendsions.py  <- initializes flask_(sqlalchemy|migrate) and creates objects (db|migrate)
+        ├── models
+        │   ├── __init__.py <- empty init file for models/
+        │   ├── user.py <- defines user model based on db object
+        │   └── video.py <- defines video model based on db object
+        └── routes
+            ├── __init__.py <- <- empty init file for routes/
+            ├── api.py <- imports Blueprint, and db|models from ..models, creates Blueprint object
+            └── main.py <- imports Blueprint, and db|models from ..models, creates Blueprint object
+
 Example from PrettyPrinted has several outdated methods, so had to glue
 together some from the DO style just to get further. Initially feels 
 similar, but this will run multiple model files
+
+A bit lacking compared to the setup described in main branch, but nice with flask-migrate setup.
+Not 100% convinced about the flatter layout here, feels a bit too clustered. But maybe simpler to define?
+Although what happens when I have models with relationships between them? circular import still?
 }
